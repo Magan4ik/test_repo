@@ -23,6 +23,12 @@ def get_user(user_id: int):
     return "Not found"
 
 
+@app.post("/create-user")
+def create_user(user: schemas.User):
+    users.append(user)
+    return "OK"
+
+
 if __name__ == "__main__":
     import os
     os.system("uvicorn main:app --reload")
